@@ -1,0 +1,13 @@
+class Solution {
+  public:
+    long long int nthFibonacci(long long int n){
+        // code here
+        #define val 1000000007
+        long long int f[5001];
+        long long int i;
+        f[0]=1;f[1]=1;
+        for(i=2;i<5000;i++){
+            f[i]=((f[i-1]%val)+(f[i-2]%val))%val;
+        }
+        return f[n-1];
+    }
